@@ -13,19 +13,32 @@ if (menu && nav) {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const filter = document.getElementById('pubFilter');
+const impactFilter = document.getElementById('impactFilter');
+const citeScoreFilter = document.getElementById('citeScoreFilter');
 const entries = Array.from(document.querySelectorAll('#journalList .publication'));
 const count = document.getElementById('pubCount');
 function filterPublications() {
   const selectedYear = filter ? filter.value : 'all';
+  const minimumImpactFactor = impactFilter.value === '' ? null : Number(impactFilter.value);
+  const minimumCiteScore = citeScoreFilter.value === '' ? null : Number(citeScoreFilter.value);
   let visible = 0;
   entries.forEach((entry) => {
-    const show = selectedYear === 'all' || entry.dataset.year === selectedYear;
+    const impactFactor = entry.dataset.impactFactor === '' ? Number.NaN : Number(entry.dataset.impactFactor);
+    const citeScore = entry.dataset.citeScore === '' ? Number.NaN : Number(entry.dataset.citeScore);
+    const yearMatches = selectedYear === 'all' || entry.dataset.year === selectedYear;
+    const impactMatches = minimumImpactFactor === null
+      || (Number.isFinite(impactFactor) && impactFactor >= minimumImpactFactor);
+    const citeScoreMatches = minimumCiteScore === null
+      || (Number.isFinite(citeScore) && citeScore >= minimumCiteScore);
+    const show = yearMatches && impactMatches && citeScoreMatches;
     entry.hidden = !show;
     if (show) visible += 1;
   });
-  if (count) count.textContent = `${visible} record${visible === 1 ? '' : 's'}`;
+  if (count) count.textContent = `${visible} of ${entries.length} records`;
 }
 if (filter) filter.addEventListener('change', filterPublications);
+if (impactFilter) impactFilter.addEventListener('input', filterPublications);
+if (citeScoreFilter) citeScoreFilter.addEventListener('input', filterPublications);
 filterPublications();
 
 document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
