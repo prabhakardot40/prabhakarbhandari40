@@ -7,10 +7,60 @@ if (menu && nav) {
   });
   nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
     nav.classList.remove('open');
+    nav.querySelectorAll('.nav-dropdown').forEach((dropdown) => { dropdown.open = false; });
     menu.setAttribute('aria-expanded', 'false');
   }));
 }
 document.getElementById('year').textContent = new Date().getFullYear();
+
+const proceedingsList = document.querySelector('#proceedings > .container > .entry-list');
+const bookChapterList = document.getElementById('bookChapterList');
+if (proceedingsList && bookChapterList) {
+  Array.from(proceedingsList.querySelectorAll(':scope > .publication')).forEach((entry) => {
+    if (/Lecture Notes in Mechanical Engineering|Sustainability in Smart Manufacturing Trends/i.test(entry.textContent)) {
+      bookChapterList.append(entry);
+    }
+  });
+}
+
+const serialGroups = document.querySelectorAll('.entry-list, .membership-list, .timeline, .interest-grid');
+serialGroups.forEach((group) => {
+  let serialCount = 0;
+  Array.from(group.children).forEach((entry) => {
+    if (!entry.matches('.entry, .timeline-card, .interest')) return;
+    serialCount += 1;
+    const serialNumber = document.createElement('span');
+    serialNumber.className = 'serial-number';
+    serialNumber.textContent = String(serialCount).padStart(2, '0');
+    serialNumber.setAttribute('aria-label', `Serial number ${serialCount}`);
+    entry.prepend(serialNumber);
+  });
+});
+
+document.querySelectorAll('table').forEach((table) => {
+  const headerRow = table.querySelector('thead tr');
+  if (headerRow) {
+    const serialHeader = document.createElement('th');
+    serialHeader.scope = 'col';
+    serialHeader.textContent = 'S. No.';
+    headerRow.prepend(serialHeader);
+  }
+  table.querySelectorAll('tbody tr').forEach((row, index) => {
+    const serialCell = document.createElement('td');
+    serialCell.className = 'serial-cell';
+    serialCell.textContent = String(index + 1).padStart(2, '0');
+    row.prepend(serialCell);
+  });
+});
+
+document.querySelectorAll('main ul:not(.course-list)').forEach((list) => {
+  list.querySelectorAll(':scope > li').forEach((item, index) => {
+    const serialNumber = document.createElement('span');
+    serialNumber.className = 'serial-number list-serial-number';
+    serialNumber.textContent = `${String(index + 1).padStart(2, '0')}.`;
+    item.prepend(serialNumber);
+  });
+});
 
 const filter = document.getElementById('pubFilter');
 const impactFilter = document.getElementById('impactFilter');
