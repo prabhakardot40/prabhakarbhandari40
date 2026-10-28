@@ -57,3 +57,16 @@ main ul.course-list li{margin:4px 0}
 .nav-dropdown-menu a{display:block;padding:8px 12px;border-radius:5px;color:#344158;font-size:.87rem;font-weight:600;white-space:nowrap}
 .nav-dropdown-menu a:hover,.nav-dropdown-menu a:focus-visible{background:var(--sky);text-decoration:none}
 @media(max-width:760px){.nav-dropdown{width:100%}.nav-dropdown-menu{position:static;min-width:0;margin-top:8px;padding:0 0 0 12px;border:0;border-left:2px solid var(--line);border-radius:0;box-shadow:none}}
+.hero-grid{align-items:start}
+.latest-update{min-width:0}
+.latest-update h2{margin:0;color:var(--navy);font:800 clamp(1.7rem,3vw,2.4rem)/1.1 Manrope,sans-serif;letter-spacing:-.04em}
+.latest-update-date{margin:7px 0 16px;color:var(--muted);font-size:.9rem;font-weight:700}
+.latest-update-slideshow{width:100%;margin-top:0}
+.latest-update-slideshow .slideshow-slide img{height:clamp(210px,32vw,340px);object-fit:contain;background:#fff}
+.latest-update-slideshow figcaption{display:grid;gap:4px;padding:12px 14px;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;color:#3e4a60;font-size:.9rem}
+.latest-update-slideshow figcaption time{color:var(--blue);font-size:.82rem;font-weight:800}
+.hero .profile-name{margin:16px 0 8px;color:var(--navy);font:800 clamp(1.8rem,2.5vw,2.1rem)/1.04 Manrope,sans-serif;letter-spacing:-.05em}
+.hero .profile-name em{color:var(--blue);font-style:normal}
+.profile-card .actions{margin:16px 0}
+@media(max-width:760px){.latest-update-slideshow .slideshow-slide img{height:clamp(220px,58vw,340px)}}
+@media(max-width:520px){.hero .profile-name{font-size:1.9rem}}

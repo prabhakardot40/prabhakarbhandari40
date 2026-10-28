@@ -97,6 +97,7 @@ document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
   const previousButton = slideshow.querySelector('.slideshow-previous');
   const nextButton = slideshow.querySelector('.slideshow-next');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const continuousAutoplay = slideshow.hasAttribute('data-autoplay-continuous');
   let activeSlide = 0;
   let timer;
 
@@ -113,8 +114,8 @@ document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
   }
 
   function startSlideshow() {
-    if (reducedMotion.matches || timer || slideshow.matches(':hover')
-      || slideshow.contains(document.activeElement) || document.hidden) {
+    if (reducedMotion.matches || timer || document.hidden
+      || (!continuousAutoplay && (slideshow.matches(':hover') || slideshow.contains(document.activeElement)))) {
       return;
     }
     timer = window.setInterval(() => showSlide(activeSlide + 1), 5000);
@@ -122,12 +123,14 @@ document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
 
   previousButton.addEventListener('click', () => showSlide(activeSlide - 1));
   nextButton.addEventListener('click', () => showSlide(activeSlide + 1));
-  slideshow.addEventListener('mouseenter', stopSlideshow);
-  slideshow.addEventListener('mouseleave', startSlideshow);
-  slideshow.addEventListener('focusin', stopSlideshow);
-  slideshow.addEventListener('focusout', (event) => {
-    if (!slideshow.contains(event.relatedTarget)) startSlideshow();
-  });
+  if (!continuousAutoplay) {
+    slideshow.addEventListener('mouseenter', stopSlideshow);
+    slideshow.addEventListener('mouseleave', startSlideshow);
+    slideshow.addEventListener('focusin', stopSlideshow);
+    slideshow.addEventListener('focusout', (event) => {
+      if (!slideshow.contains(event.relatedTarget)) startSlideshow();
+    });
+  }
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) stopSlideshow();
     else startSlideshow();
