@@ -11,6 +11,51 @@ if (menu && nav) {
     menu.setAttribute('aria-expanded', 'false');
   }));
 }
+if (nav) {
+  const sectionLinks = Array.from(nav.querySelectorAll('a[href^="#"]')).flatMap((link) => {
+    const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    return target ? [{ link, target }] : [];
+  });
+  sectionLinks.sort((first, second) => (
+    first.target.compareDocumentPosition(second.target) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+  ));
+  let activeLink = null;
+  let scrollFrame = null;
+
+  const updateActiveSection = () => {
+    scrollFrame = null;
+    const activationLine = window.scrollY + 120;
+    let activeSectionLink = null;
+    sectionLinks.forEach((sectionLink) => {
+      if (sectionLink.target.getBoundingClientRect().top + window.scrollY <= activationLine) {
+        activeSectionLink = sectionLink;
+      }
+    });
+
+    if ((activeSectionLink && activeSectionLink.link) === activeLink) return;
+    if (activeLink) {
+      activeLink.classList.remove('is-active');
+      activeLink.removeAttribute('aria-current');
+    }
+
+    activeLink = activeSectionLink ? activeSectionLink.link : null;
+    if (!activeLink) return;
+
+    activeLink.classList.add('is-active');
+    activeLink.setAttribute('aria-current', 'location');
+  };
+
+  const scheduleActiveSectionUpdate = () => {
+    if (scrollFrame === null) {
+      scrollFrame = window.requestAnimationFrame(updateActiveSection);
+    }
+  };
+
+  window.addEventListener('scroll', scheduleActiveSectionUpdate, { passive: true });
+  window.addEventListener('resize', scheduleActiveSectionUpdate);
+  window.addEventListener('hashchange', scheduleActiveSectionUpdate);
+  scheduleActiveSectionUpdate();
+}
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const proceedingsList = document.querySelector('#proceedings > .container > .entry-list');
@@ -37,6 +82,16 @@ serialGroups.forEach((group) => {
   });
 });
 
+document.querySelectorAll('.administrative-list').forEach((list) => {
+  Array.from(list.children).forEach((entry, index) => {
+    const serialNumber = document.createElement('span');
+    serialNumber.className = 'serial-number';
+    serialNumber.textContent = String(index + 1).padStart(2, '0');
+    serialNumber.setAttribute('aria-label', `Serial number ${index + 1}`);
+    entry.prepend(serialNumber);
+  });
+});
+
 document.querySelectorAll('table').forEach((table) => {
   const headerRow = table.querySelector('thead tr');
   if (headerRow) {
@@ -53,7 +108,7 @@ document.querySelectorAll('table').forEach((table) => {
   });
 });
 
-document.querySelectorAll('main ul:not(.course-list)').forEach((list) => {
+document.querySelectorAll('main ul:not(.course-list):not(.skill-list--badges)').forEach((list) => {
   list.querySelectorAll(':scope > li').forEach((item, index) => {
     const serialNumber = document.createElement('span');
     serialNumber.className = 'serial-number list-serial-number';

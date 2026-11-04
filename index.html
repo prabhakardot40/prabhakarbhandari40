@@ -17,16 +17,16 @@
   </div>
 </header>
 <nav id="navlinks" class="navlinks" aria-label="Main navigation">
-  <div class="nav-group">
-    <h2 class="nav-group-title">Profile</h2>
+  <details class="nav-group">
+    <summary class="nav-group-title">Profile</summary>
     <a href="#about">Present Responsibilities</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-  </div>
-  <div class="nav-group">
-    <h2 class="nav-group-title">Research</h2>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-group-title">Research</summary>
     <a href="#projects">Projects</a>
-    <a href="#research">Research</a>
+    <a href="#research">Research interests</a>
     <details class="nav-dropdown">
       <summary>Publications</summary>
       <div class="nav-dropdown-menu">
@@ -37,23 +37,25 @@
         <a href="#patent-publications">Patent</a>
       </div>
     </details>
+    <a href="#editor">Editor</a>
+    <a href="#reviewing">Journal reviewing</a>
     <a href="#consultancy">Consultancy</a>
     <a href="#professional-memberships">Professional memberships</a>
     <a href="#technical-skills">Technical skills &amp; instrumentation handled</a>
-  </div>
-  <div class="nav-group">
-    <h2 class="nav-group-title">Academic</h2>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-group-title">Academic</summary>
     <a href="#awards">Awards</a>
     <a href="#academic">Academic Activities</a>
     <a href="#administrative-responsibilities">Administrative responsibilities</a>
     <a href="#teachings">Teachings</a>
     <a href="#supervision">Supervision</a>
-  </div>
-  <div class="nav-group">
-    <h2 class="nav-group-title">Explore</h2>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-group-title">Explore</summary>
     <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
-  </div>
+  </details>
 </nav>
 <main>
 <section class="hero" id="home">
@@ -116,10 +118,12 @@
     </section>
     <aside class="profile-card">
       <img class="profile-photo" src="assets/profile-pic.jpg" alt="Dr. Prabhakar Bhandari">
-      <h1 class="profile-name">Dr. Prabhakar<br><em>Bhandari</em></h1>
-      <p>K. R. Mangalam University</p>
-      <p>School of Engineering and Technology</p>
-      <p>Gurugram, Haryana, India</p>
+      <h1 class="profile-name">Dr. Prabhakar <em>Bhandari</em></h1>
+      <div class="profile-affiliation">
+        <p>K. R. Mangalam University</p>
+        <p>School of Engineering and Technology</p>
+        <p>Gurugram, Haryana, India</p>
+      </div>
       <h2 class="research-profile-heading">Research Profile Link:</h2>
       <p class="profile-links">
         <a href="https://scholar.google.com/citations?user=V2GqvCYAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg class="profile-link-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285f4" d="M2 7.2 12 3l10 4.2-10 4.2L2 7.2Z"/><path fill="#34a853" d="M5 10.1v6.1c4.4 3.4 9.6 3.4 14 0v-6.1l-7 2.9-7-2.9Z"/><path fill="#fbbc04" d="M21 8v7h1V8l-1-1-1 1h1Z"/></svg>Google Scholar</a>
@@ -137,7 +141,6 @@
     <li class="responsibility-item"><span>Associate Director, Central Instrumentation Facility (CIF), K. R. Mangalam University</span><img class="cif-logo" src="assets/cif-logo.png" alt="Central Instrumentation Facility, K. R. Mangalam University logo" loading="lazy" decoding="async"></li>
     <li class="responsibility-item"><span>Research Finance Officer, Research Development Cell (RDC), K. R. Mangalam University</span></li>
     <li class="responsibility-item"><span>Assistant Professor (Selection Grade), Mechanical Engineering, SOET, K. R. Mangalam University</span><img class="krmu-responsibility-logo" src="assets/krmu-logo.png" alt="K. R. Mangalam University logo" loading="lazy" decoding="async"></li>
-    <li class="responsibility-item"><span><a class="responsibility-link" href="https://www.estagrx.com/advisory" target="_blank" rel="noopener noreferrer"><svg class="profile-link-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.8 12h18.4M12 2.5c2.4 2.6 3.6 5.8 3.6 9.5s-1.2 6.9-3.6 9.5c-2.4-2.6-3.6-5.8-3.6-9.5s1.2-6.9 3.6-9.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Advisor in a U.S.-based company, EST AGRX</a></span><img class="estagrx-responsibility-logo" src="assets/estagrx-advisor-logo.png" alt="EST AGRX logo" loading="lazy" decoding="async"></li>
   </ul></div>
 </div></section>
 
@@ -159,61 +162,19 @@
 <article class="timeline-card timeline-card--iftm"><span class="eyebrow">1 August 2013 – 17 August 2020</span><div class="timeline-card-institution"><div><h3>Assistant Professor</h3><p>Department of Mechanical Engineering, IFTM University, Moradabad, Uttar Pradesh.</p></div><img class="timeline-institution-logo" src="assets/iftm-logo.jpg" alt="Department of Mechanical Engineering, IFTM University logo" loading="lazy" decoding="async"></div></article>
 </div></section>
 <section id="projects" class="section"><div class="container">
-  <p class="eyebrow">Projects & service</p><h2>Research projects, administration and consultancy</h2>
+  <p class="eyebrow">Research</p><h2>Research projects</h2>
   <article class="entry project-grant-card">
     <h3>Project grant</h3>
     <p>Completed a Seed Grant project awarded by K.R. Mangalam University for a two-year duration on “Development of Micro pin fin Heat sink to facilitate enhanced conversion efficiency of Photovoltaic solar cells” of ₹2.10 lakh as Principal Investigator (PI).</p>
     <img class="project-grant-logo" src="assets/krmu-logo.png" alt="K. R. Mangalam University logo" loading="lazy" decoding="async">
   </article>
-  <article class="entry consultancy-card">
-    <h3 id="consultancy">Consultancy</h3>
-    <ul>
-      <li>Advisor in a US based company EST AGRX.</li>
-      <li>Consultancy work provided to Haryana Steel Mongers Pvt. Ltd., Faridabad, Haryana, India.</li>
-    </ul>
-  </article>
-  <h2 id="professional-memberships" class="subheading">Professional memberships</h2><div class="membership-list">
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.iaccr.org/" target="_blank" rel="noopener" aria-label="Visit International Association for Carbon Capture"><img class="membership-logo" src="https://www.iaccr.org/uploadfile/202304/de1766ae34ef.png" alt="International Association for Carbon Capture logo" loading="lazy" decoding="async"></a><p>Senior Member of International association for Carbon capture (Membership number: 202610010433)</p></article>
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://imperialsociety.in/" target="_blank" rel="noopener" aria-label="Visit Imperial Society of Innovative Engineers"><img class="membership-logo" src="https://imperialsociety.in/storage/2019/05/ISIE-NEW-LOGO-1.jpg" alt="Imperial Society of Innovative Engineers logo" loading="lazy" decoding="async"></a><p>Life member of Imperial Society of Innovative Engineers (Membership number: ISIEP242022008)</p></article>
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://ishmt.iitm.ac.in/" target="_blank" rel="noopener" aria-label="Visit Indian Society of Heat and Mass Transfer"><img class="membership-logo" src="https://ishmt.iitm.ac.in/resources/images/icon.png" alt="Indian Society of Heat and Mass Transfer logo" loading="lazy" decoding="async"></a><p>Life member of Indian Society of Heat and Mass transfer (Membership number: 1764)</p></article>
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.ieindia.org/web/home" target="_blank" rel="noopener" aria-label="Visit The Institution of Engineers (India)"><img class="membership-logo" src="https://www.ieindia.org/favicon.ico" alt="The Institution of Engineers (India) logo" loading="lazy" decoding="async"></a><p>Associate member of The Institution of Engineers (India) (membership number: AM3051598)</p></article>
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.smehk.org/" target="_blank" rel="noopener" aria-label="Visit Hong Kong Society of Mechanical Engineers"><img class="membership-logo" src="https://www.smehk.org/advs/1731050583.jpg" alt="Hong Kong Society of Mechanical Engineers logo" loading="lazy" decoding="async"></a><p>Member of Hong Kong society of Mechanical Engineers (membership number: M20211230001)</p></article>
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.iaeng.org/" target="_blank" rel="noopener" aria-label="Visit International Association of Engineers"><img class="membership-logo" src="https://www.iaeng.org/images/index_r1_c1.jpg" alt="International Association of Engineers logo" loading="lazy" decoding="async"></a><p>Member of International Association of Engineers (membership number: 291554).</p></article>
-    <article class="entry membership-entry"><a class="membership-logo-link" href="https://amae.theides.org/" target="_blank" rel="noopener" aria-label="Visit Association of Mechanical and Aeronautical Engineers"><img class="membership-logo" src="https://amae.theides.org/index_files/eklat-logo.png" alt="Association of Mechanical and Aeronautical Engineers logo" loading="lazy" decoding="async"></a><p>Member of Universal Association of Mechanical and Aeronautical Engineers (SNM20220118916)</p></article>
-  </div>
-  </div></section>
+</div></section>
 <section id="research" class="section alt"><div class="container">
   <p class="eyebrow">Research</p><h2>Research interests</h2>
-  <div class="interest-grid"><article class="interest"><h3>Heat transfer Engineering and Fluid dynamics</h3><p>Heat transfer Engineering and Fluid dynamics</p></article><article class="interest"><h3>Renewable Energy</h3><p>solar air heater, solar water heater, solar still, etc.</p></article><article class="interest"><h3>Electronic cooling</h3><p>microchannel heat sink, single phase fluid flow, nano fluid, computational fluid dynamics, experimental heat transfer, battery thermal management system.</p></article><article class="interest"><h3>Fluid Flow</h3><p>Ice slurry Flow, two phase fluid flow, microfluidics etc.</p></article><article class="interest"><h3>Bio char and its application</h3><p>Bio char and its application</p></article></div>
-  <h2 id="technical-skills" class="subheading">Technical skills &amp; instrumentation handled</h2>
-  <div class="skills-grid">
-    <div class="skill-panel">
-      <h3>Experimental Skills</h3>
-      <ul class="skill-list">
-        <li><span class="skill-logo logo-tga">TGA/DSC</span><span>TGA/DSC instruments</span></li>
-        <li><span class="skill-logo logo-ftir">FTIR</span><span>FTIR instruments</span></li>
-        <li><span class="skill-logo logo-lcr">LCR</span><span>LCR meter</span></li>
-        <li><span class="skill-logo logo-uv">UV</span><span>UV Spectrophotometer</span></li>
-        <li><span class="skill-logo logo-mf">MF</span><span>Electronic Muffle furnaces</span></li>
-      </ul>
-    </div>
-    <div class="skill-panel">
-      <h3>Numerical / Computational Skills</h3>
-      <ul class="skill-list">
-        <li><span class="skill-logo logo-sw">SolidWorks</span><span>SolidWorks</span></li>
-        <li><span class="skill-logo logo-ansys">ANSYS</span><span>ANSYS</span></li>
-        <li><span class="skill-logo logo-matlab">MATLAB</span><span>MATLAB</span></li>
-        <li><span class="skill-logo logo-spss">SPSS</span><span>SPSS</span></li>
-        <li><span class="skill-logo logo-tp">Tecplot</span><span>Techplot 360</span></li>
-        <li><span class="skill-logo logo-sig">SigmaPlot</span><span>SigmaPlot</span></li>
-        <li><span class="skill-logo logo-cpp">C++</span><span>C++</span></li>
-      </ul>
-    </div>
-  </div>
+  <div class="interest-grid"><article class="interest"><h3>Heat transfer Engineering and Fluid dynamics</h3><p>Heat transfer Engineering and Fluid dynamics</p></article><article class="interest"><h3>Renewable Energy</h3><p>Solar Air Heater, Solar Water Heater, Solar Still, Etc.</p></article><article class="interest"><h3>Electronic cooling</h3><p>Microchannel Heat Sink, Single Phase Fluid Flow, Nano Fluid, Computational Fluid Dynamics, Experimental Heat Transfer, Battery Thermal Management System.</p></article><article class="interest"><h3>Fluid Flow</h3><p>Ice Slurry Flow, Two Phase Fluid Flow, Microfluidics Etc.</p></article><article class="interest"><h3>Bio char and its application</h3><p>Bio char and its application</p></article></div>
 </div></section>
 <section id="publications" class="section"><div class="container">
   <p class="eyebrow">Scholarly output</p><h2 id="journal-publication">Journal Publication</h2>
-  <p class="section-intro">Publication records are reproduced from the supplied CV; Impact Factor and CiteScore values are from the supplied publication workbook. A tilde marks an approximate CiteScore. Values marked “Not available” or “Not listed in spreadsheet” were not provided in the workbook. Entry tint follows Impact Factor (&lt;1, 1–&lt;3, 3–&lt;5, ≥5); the top border follows CiteScore (&lt;2, 2–&lt;5, 5–&lt;10, ≥10). Gray indicates a missing value. DOI and source URLs are linked when present in the CV.</p>
   <div class="filter-row">
     <label for="pubFilter">Year</label><select id="pubFilter"><option value="all">All years</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2017">2017</option></select>
     <label for="impactFilter">Minimum Impact Factor</label><input id="impactFilter" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Any">
@@ -336,17 +297,122 @@
 <article class="entry publication" data-year="2021"><span class="year">2021</span><p>B. P. Singh, V. S. Bisht, <strong>P. Bhandari</strong>, (2021), Numerical Study of Heat Exchanger Having Protrusion and Dimple Roughened Conical Ring Inserts. In: Sikarwar B. S., Sundén B., Wang Q. (eds) Advances in Fluid and Thermal Engineering. Lecture Notes in Mechanical Engineering. Springer, Singapore, pp. 151-161. DOI: <a href="https://doi.org/10.1007/978-981-16-0159-0_14" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/978-981-16-0159-0_14</a></p></article>
 <article class="entry publication" data-year="2020"><span class="year">2020</span><p><strong>P. Bhandari</strong>, and Y. K. Prajapati, (2020). Numerical Analysis of Different Arrangement of Square Pin-Fin Microchannel Heat Sink. In: Biswal B., Sarkar B., Mahanta P. (eds) Advances in Mechanical Engineering. Lecture Notes in Mechanical Engineering. Springer, Singapore, pp. 879-891. DOI: <a href="https://doi.org/10.1007/978-981-15-0124-1_79" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/978-981-15-0124-1_79</a></p></article>
 <article class="entry publication" data-year="2015"><span class="year">2015</span><p>N. Kumar, P. Singh, A. K. Redhewal, and <strong>P. Bhandari</strong>, (2015), “A Review on Nano fluids Applications for Heat Transfer in Micro-channels,” Procedia Engineering. Vol. 127, pp.1197-1202. DOI: <a href="https://doi.org/10.1016/j.proeng.2015.11.461" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.proeng.2015.11.461</a></p></article></div>
-  <h2 id="book-chapters" class="subheading">Book Chapter</h2><div id="bookChapterList" class="entry-list"></div>
   <h2 id="books" class="subheading">Book</h2>
   <div class="entry-list"><article class="entry"><p><strong>P. Bhandari</strong>, S. Jeet, K. Khatreja, M. Kundu (2026). “Is India in Reverse Gear in the Journey of Development? A Critical Overview of India&#x27;s Progress in Key Developmental Aspects”. Under review Publisher-Bentham Science.</p></article>
 <article class="entry"><p><strong>P. Bhandari</strong>, (2023). “Devices Utilizing Solar Energy for operation”. Lambert Academic publishing. ISBN No: 978-62-07-44865-4.</p></article>
 <article class="entry"><p><strong>P. Bhandari</strong>, (2023). “Back to Hindu Mythology: From Engineering perspective”. Lambert Academic publishing. ISBN No: 978-620-6-78643-6.</p></article>
 <article class="entry"><p><strong>P. Bhandari</strong>, <strong>P. Bhandari</strong>, (2023). “Mechanical devices in Veterinary”. Lambert Academic publishing. ISBN No: 978-620-6-78591-0.</p></article></div>
-  <div class="panel"><h3>Editor</h3><p>Innovative Trends in Multidisciplinary Engineering</p></div>
+  <h2 id="book-chapters" class="subheading">Book Chapter</h2><div id="bookChapterList" class="entry-list"></div>
 </div></section>
 <section id="patents" class="section"><div class="container">
   <p class="eyebrow">Intellectual property</p><h2 id="patent-publications">Patents</h2>
   <div class="entry-list"><article class="entry"><p>Published an Indian patent on “method for multi-phase cooling of high-density mechanical assemblies” (202511123081 A)</p></article><article class="entry"><p>Published an Indian patent on “System for adaptive thermo-fluid regulation in high-efficiency heat transfer networks” (202511123073 A)</p></article><article class="entry"><p>Granted a South African Patent on “Heat exchanger system with clock wise and counter clock wise flow type concentric spiral tube” (2025/01658)</p></article><article class="entry"><p>Granted a South African Patent on “A Hybrid Packed Bed Heat Regenerating Reservoir system” (2025/02407)</p></article><article class="entry"><p>Published an Indian patent on “hybrid cooling in motorcyclist apparel for heat to cold transitions” (202511101944A)</p></article><article class="entry"><p>Indian design patent of “Multi-purpose water bottle” granted (Application No: 367533-001)</p></article><article class="entry"><p>Indian design patent of “micro pin fin heat sink” granted (Application No: 366738-001)</p></article></div>
+</div></section>
+<section class="section alt"><div class="container">
+  <p class="eyebrow">Research</p><h2 id="editor">Editor</h2>
+  <article class="entry"><p>Innovative Trends in Multidisciplinary Engineering</p></article>
+</div></section>
+<section id="reviewing" class="section"><div class="container">
+  <h2>Journal reviewing</h2>
+  <div class="reviewer-publishers">
+    <section class="publisher-group publisher-elsevier" aria-labelledby="reviewer-elsevier">
+      <h3 id="reviewer-elsevier">Elsevier</h3>
+      <div class="reviewer-grid"><span class="tag">Case studies in thermal engineering</span><span class="tag">Ain Shams Engineering Journal</span><span class="tag">Applied Thermal Engineering</span><span class="tag">Energy</span><span class="tag">International Journal of Thermofluids</span><span class="tag">International Communications in Heat and Mass Transfer</span><span class="tag">International Journal of Heat and Fluid Flow</span><span class="tag">International Journal of Heat and Mass Transfer</span><span class="tag">International Journal of Hydrogen Energy</span><span class="tag">International Journal of Thermal Sciences</span><span class="tag">Thermal Science and Engineering Progress</span><span class="tag">Results in Engineering</span><span class="tag">Energy Reports</span></div>
+    </section>
+    <section class="publisher-group publisher-springer" aria-labelledby="reviewer-springer">
+      <h3 id="reviewer-springer">Springer Nature</h3>
+      <div class="reviewer-grid"><span class="tag">Journal of Thermal Analysis and Calorimetry</span><span class="tag">Iranian Journal of Science and Technology</span><span class="tag">Journal of the Brazilian Society of Mechanical Sciences and Engineering</span><span class="tag">Heat and Mass Transfer</span><span class="tag">Scientific Reports</span></div>
+    </section>
+    <section class="publisher-group publisher-wiley" aria-labelledby="reviewer-wiley">
+      <h3 id="reviewer-wiley">Wiley</h3>
+      <div class="reviewer-grid"><span class="tag">Energy Technology</span><span class="tag">The Canadian Journal of Chemical Engineering</span></div>
+    </section>
+    <section class="publisher-group publisher-mdpi" aria-labelledby="reviewer-mdpi">
+      <h3 id="reviewer-mdpi">MDPI</h3>
+      <div class="reviewer-grid"><span class="tag">Energies</span><span class="tag">Fluids</span><span class="tag">Applied Science</span><span class="tag">Micromachines</span><span class="tag">Processes</span><span class="tag">Sustainability</span><span class="tag">Materials</span><span class="tag">Symmetry</span></div>
+    </section>
+    <section class="publisher-group publisher-pas" aria-labelledby="reviewer-pas">
+      <h3 id="reviewer-pas">Polish Academy of Sciences</h3>
+      <div class="reviewer-grid"><span class="tag">Archives of Thermodynamics</span></div>
+    </section>
+    <section class="publisher-group publisher-aptisi" aria-labelledby="reviewer-aptisi">
+      <h3 id="reviewer-aptisi">APTISI</h3>
+      <div class="reviewer-grid"><span class="tag">Aptisi Transactions on Technopreneurship (ATT)</span></div>
+    </section>
+    <section class="publisher-group publisher-transtek" aria-labelledby="reviewer-transtek">
+      <h3 id="reviewer-transtek">Trans Tech Publications</h3>
+      <div class="reviewer-grid"><span class="tag">International Journal of Engineering Research in Africa (JERA)</span><span class="tag">Defect and Diffusion Forum (DDF)</span></div>
+    </section>
+    <section class="publisher-group publisher-bentham" aria-labelledby="reviewer-bentham">
+      <h3 id="reviewer-bentham">Bentham Science</h3>
+      <div class="reviewer-grid"><span class="tag">Recent Patents on Mechanical Engineering</span></div>
+    </section>
+    <section class="publisher-group publisher-other" aria-labelledby="reviewer-other">
+      <h3 id="reviewer-other">Other / publisher to verify</h3>
+      <div class="reviewer-grid"><span class="tag">International Journal of Mechanical Engineering and Aplication (IJMEA)</span></div>
+    </section>
+  </div>
+  <div class="publisher-legend" aria-label="Publisher color key">
+    <span class="publisher-legend-item publisher-elsevier"><span class="legend-swatch" aria-hidden="true"></span>Elsevier</span>
+    <span class="publisher-legend-item publisher-springer"><span class="legend-swatch" aria-hidden="true"></span>Springer Nature</span>
+    <span class="publisher-legend-item publisher-wiley"><span class="legend-swatch" aria-hidden="true"></span>Wiley</span>
+    <span class="publisher-legend-item publisher-mdpi"><span class="legend-swatch" aria-hidden="true"></span>MDPI</span>
+    <span class="publisher-legend-item publisher-pas"><span class="legend-swatch" aria-hidden="true"></span>Polish Academy of Sciences</span>
+    <span class="publisher-legend-item publisher-aptisi"><span class="legend-swatch" aria-hidden="true"></span>APTISI</span>
+    <span class="publisher-legend-item publisher-transtek"><span class="legend-swatch" aria-hidden="true"></span>Trans Tech Publications</span>
+    <span class="publisher-legend-item publisher-bentham"><span class="legend-swatch" aria-hidden="true"></span>Bentham Science</span>
+    <span class="publisher-legend-item publisher-other"><span class="legend-swatch" aria-hidden="true"></span>Other / publisher to verify</span>
+  </div>
+</div></section>
+<section class="section"><div class="container">
+  <p class="eyebrow">Research</p>
+  <article class="entry consultancy-card">
+    <h2 id="consultancy">Consultancy</h2>
+    <ul>
+      <li><a href="https://www.estagrx.com/advisory" target="_blank" rel="noopener noreferrer">Advisor in a U.S.-based company, EST AGRX</a></li>
+      <li>Consultancy work provided to Haryana Steel Mongers Pvt. Ltd., Faridabad, Haryana, India.</li>
+    </ul>
+  </article>
+</div></section>
+<section class="section alt"><div class="container">
+  <p class="eyebrow">Research</p><h2 id="professional-memberships">Professional memberships</h2>
+  <div class="membership-list">
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.iaccr.org/" target="_blank" rel="noopener" aria-label="Visit International Association for Carbon Capture"><img class="membership-logo" src="https://www.iaccr.org/uploadfile/202304/de1766ae34ef.png" alt="International Association for Carbon Capture logo" loading="lazy" decoding="async"></a><p>Senior Member of International association for Carbon capture (Membership number: 202610010433)</p></article>
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://imperialsociety.in/" target="_blank" rel="noopener" aria-label="Visit Imperial Society of Innovative Engineers"><img class="membership-logo" src="https://imperialsociety.in/storage/2019/05/ISIE-NEW-LOGO-1.jpg" alt="Imperial Society of Innovative Engineers logo" loading="lazy" decoding="async"></a><p>Life member of Imperial Society of Innovative Engineers (Membership number: ISIEP242022008)</p></article>
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://ishmt.iitm.ac.in/" target="_blank" rel="noopener" aria-label="Visit Indian Society of Heat and Mass Transfer"><img class="membership-logo" src="https://ishmt.iitm.ac.in/resources/images/icon.png" alt="Indian Society of Heat and Mass Transfer logo" loading="lazy" decoding="async"></a><p>Life member of Indian Society of Heat and Mass transfer (Membership number: 1764)</p></article>
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.ieindia.org/web/home" target="_blank" rel="noopener" aria-label="Visit The Institution of Engineers (India)"><img class="membership-logo" src="https://www.ieindia.org/favicon.ico" alt="The Institution of Engineers (India) logo" loading="lazy" decoding="async"></a><p>Associate member of The Institution of Engineers (India) (membership number: AM3051598)</p></article>
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.smehk.org/" target="_blank" rel="noopener" aria-label="Visit Hong Kong Society of Mechanical Engineers"><img class="membership-logo" src="https://www.smehk.org/advs/1731050583.jpg" alt="Hong Kong Society of Mechanical Engineers logo" loading="lazy" decoding="async"></a><p>Member of Hong Kong society of Mechanical Engineers (membership number: M20211230001)</p></article>
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://www.iaeng.org/" target="_blank" rel="noopener" aria-label="Visit International Association of Engineers"><img class="membership-logo" src="https://www.iaeng.org/images/index_r1_c1.jpg" alt="International Association of Engineers logo" loading="lazy" decoding="async"></a><p>Member of International Association of Engineers (membership number: 291554).</p></article>
+    <article class="entry membership-entry"><a class="membership-logo-link" href="https://amae.theides.org/" target="_blank" rel="noopener" aria-label="Visit Association of Mechanical and Aeronautical Engineers"><img class="membership-logo" src="https://amae.theides.org/index_files/eklat-logo.png" alt="Association of Mechanical and Aeronautical Engineers logo" loading="lazy" decoding="async"></a><p>Member of Universal Association of Mechanical and Aeronautical Engineers (SNM20220118916)</p></article>
+  </div>
+</div></section>
+<section id="technical-skills" class="section"><div class="container">
+  <p class="eyebrow">Research</p><h2>Technical skills &amp; instrumentation handled</h2>
+  <div class="skills-grid">
+    <div class="skill-panel">
+      <h3>Experimental Skills</h3>
+      <ul class="skill-list skill-list--badges">
+        <li><span class="skill-logo logo-tga">TGA/DSC instruments</span></li>
+        <li><span class="skill-logo logo-ftir">FTIR instruments</span></li>
+        <li><span class="skill-logo logo-lcr">LCR meter</span></li>
+        <li><span class="skill-logo logo-uv">UV Spectrophotometer</span></li>
+        <li><span class="skill-logo logo-mf">Electronic Muffle furnaces</span></li>
+      </ul>
+    </div>
+    <div class="skill-panel">
+      <h3>Numerical / Computational Skills</h3>
+      <ul class="skill-list skill-list--badges">
+        <li><span class="skill-logo logo-sw">SolidWorks</span></li>
+        <li><span class="skill-logo logo-ansys">ANSYS</span></li>
+        <li><span class="skill-logo logo-matlab">MATLAB</span></li>
+        <li><span class="skill-logo logo-spss">SPSS</span></li>
+        <li><span class="skill-logo logo-tp">Tecplot 360</span></li>
+        <li><span class="skill-logo logo-sig">SigmaPlot</span></li>
+        <li><span class="skill-logo logo-cpp">C++</span></li>
+        <li><span class="skill-logo logo-python">Python</span></li>
+      </ul>
+    </div>
+  </div>
 </div></section>
 <section id="awards" class="section alt"><div class="container">
   <p class="eyebrow">Recognition</p><h2>Awards, recognitions and appreciations</h2>
@@ -400,7 +466,7 @@
 </div></section>
 <section id="administrative-responsibilities" class="section alt"><div class="container">
   <p class="eyebrow">Academic service</p><h2>Administrative responsibilities</h2>
-  <div class="entry-list">
+  <div class="administrative-list">
     <article class="entry"><p>School Research Committee Member</p></article>
     <article class="entry"><p>University Research Committee Member</p></article>
     <article class="entry"><p>Laboratory Audit and Quality Assurance Committee member</p></article>
@@ -416,11 +482,6 @@
 </div></section>
 <section id="teachings" class="section"><div class="container"><p class="eyebrow">Teaching</p><h2>Teachings</h2><div class="entry-list teaching-list"><article class="entry"><h3>Undergraduate</h3><h4>Course Taught</h4><img class="student-photo" src="assets/krmu-ug-teaching-2022-23.jpg" alt="Undergraduate teaching at K. R. Mangalam University, 2022–23" loading="lazy" decoding="async"></article><article class="entry"><h3>Post Graduate</h3><h4>Course Taught</h4><ul class="course-list"><li>Applied Research Methodologies in Computer Science - MCA</li></ul></article><article class="entry"><h3>Ph.D.</h3><h4>Course Taught</h4><ul class="course-list"><li>Quantitative Techniques</li><li>Research Publication and Ethics</li></ul></article></div></div></section>
 <section id="supervision" class="section alt"><div class="container"><p class="eyebrow">Student guidance</p><h2>Supervision</h2><div class="entry-list teaching-list"><article id="undergraduate-supervision" class="entry"><h3>Undergraduate</h3><p>UG Students</p><video class="student-video" controls preload="metadata" playsinline aria-label="Video for undergraduate student supervision"><source src="assets/ug-students-supervision.mp4" type="video/mp4">Your browser does not support the video element.</video></article><article id="postgraduate-supervision" class="entry"><h3>Post Graduate</h3><p>M.Tech - 1 Student (Atul Kumar)</p></article><article id="phd-supervision" class="entry"><h3>Ph.D.</h3><p>Ph.D - 2 student ongoing as Co-Supervisor- Poonam Yadav, Seema</p></article></div></div></section>
-<section id="reviewing" class="section alt"><div class="container">
-  <p class="eyebrow">Professional service</p><h2>Journal reviewing</h2>
-  <p>The CV lists reviewing activity for journals across Elsevier, Springer Nature, Wiley, MDPI and other publishers. Journal names recorded in the CV are included below.</p>
-  <div class="reviewer-grid"><span class="tag">Case studies in thermal engineering</span><span class="tag">Ain Shams Engineering Journal</span><span class="tag">Applied Thermal Engineering</span><span class="tag">Energy</span><span class="tag">International Journal of Thermofluids</span><span class="tag">International Communications in Heat and Mass Transfer</span><span class="tag">International Journal of Heat and Fluid Flow</span><span class="tag">International Journal of Heat and Mass Transfer</span><span class="tag">International Journal of Hydrogen Energy</span><span class="tag">International Journal of Thermal Sciences</span><span class="tag">Thermal Science and Engineering Progress</span><span class="tag">Results in Engineering</span><span class="tag">Energy Reports</span><span class="tag">Journal of Thermal Analysis and Calorimetry</span><span class="tag">Iranian Journal of Science and Technology</span><span class="tag">Journal of the Brazilian Society of Mechanical Sciences and Engineering</span><span class="tag">Heat and Mass Transfer</span><span class="tag">Scientific Reports</span><span class="tag">Energy Technology</span><span class="tag">The Canadian Journal of Chemical Engineering</span><span class="tag">Energies</span><span class="tag">Fluids</span><span class="tag">Applied Science</span><span class="tag">Micromachines</span><span class="tag">Processes</span><span class="tag">Sustainability</span><span class="tag">Materials</span><span class="tag">Symmetry</span><span class="tag">Archives of Thermodynamics</span><span class="tag">Aptisi Transactions on Technopreneurship (ATT)</span><span class="tag">International Journal of Engineering Research in Africa (JERA)</span><span class="tag">Defect and Diffusion Forum (DDF)</span><span class="tag">International Journal of Mechanical Engineering and Aplication (IJMEA)</span><span class="tag">Recent Patents on Mechanical Engineering</span></div>
-</div></section>
 <section id="blog" class="section"><div class="container">
   <p class="eyebrow">Updates</p><h2>Blog</h2>
   <figure class="award-slideshow blog-slideshow">
