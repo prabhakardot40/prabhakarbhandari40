@@ -120,10 +120,29 @@ document.querySelectorAll('main ul:not(.course-list):not(.skill-list--badges)').
 const filter = document.getElementById('pubFilter');
 const impactFilter = document.getElementById('impactFilter');
 const citeScoreFilter = document.getElementById('citeScoreFilter');
+const indexationFilter = document.getElementById('indexationFilter');
 const entries = Array.from(document.querySelectorAll('#journalList .publication'));
 const count = document.getElementById('pubCount');
+entries.forEach((entry) => {
+  const indexationTags = Array.from((entry.textContent || '').matchAll(/\{([^}]*)\}/g), (match) => match[1]).join(' ');
+  if (/\bSCOPUS\b/i.test(indexationTags)) {
+    if (/\bSCIE\b/i.test(indexationTags)) {
+      entry.dataset.indexation = 'scie-scopus';
+      entry.classList.add('indexation-scie-scopus');
+    } else if (/\bESCI\b/i.test(indexationTags)) {
+      entry.dataset.indexation = 'esci-scopus';
+      entry.classList.add('indexation-esci-scopus');
+    } else {
+      entry.dataset.indexation = 'scopus';
+      entry.classList.add('indexation-scopus');
+    }
+  } else {
+    entry.dataset.indexation = 'other';
+  }
+});
 function filterPublications() {
   const selectedYear = filter ? filter.value : 'all';
+  const selectedIndexation = indexationFilter ? indexationFilter.value : 'all';
   const minimumImpactFactor = impactFilter.value === '' ? null : Number(impactFilter.value);
   const minimumCiteScore = citeScoreFilter.value === '' ? null : Number(citeScoreFilter.value);
   let visible = 0;
@@ -135,27 +154,25 @@ function filterPublications() {
       || (Number.isFinite(impactFactor) && impactFactor >= minimumImpactFactor);
     const citeScoreMatches = minimumCiteScore === null
       || (Number.isFinite(citeScore) && citeScore >= minimumCiteScore);
-    const show = yearMatches && impactMatches && citeScoreMatches;
+    const indexationMatches = selectedIndexation === 'all' || entry.dataset.indexation === selectedIndexation;
+    const show = yearMatches && impactMatches && citeScoreMatches && indexationMatches;
     entry.hidden = !show;
-    if (show) visible += 1;
+    if (show) {
+      visible += 1;
+      const serialNumber = entry.querySelector('.serial-number');
+      if (serialNumber) {
+        serialNumber.textContent = String(visible).padStart(2, '0');
+        serialNumber.setAttribute('aria-label', `Serial number ${visible}`);
+      }
+    }
   });
   if (count) count.textContent = `${visible} of ${entries.length} records`;
 }
 if (filter) filter.addEventListener('change', filterPublications);
 if (impactFilter) impactFilter.addEventListener('input', filterPublications);
 if (citeScoreFilter) citeScoreFilter.addEventListener('input', filterPublications);
+if (indexationFilter) indexationFilter.addEventListener('change', filterPublications);
 filterPublications();
-
-document.querySelectorAll('#journalList .publication').forEach((entry) => {
-  const text = entry.textContent || '';
-  if (/\{SCIE\s*&\s*SCOPUS\}/i.test(text)) {
-    entry.classList.add('indexation-scie-scopus');
-  } else if (/\{ESCI\s*&\s*SCOPUS\}/i.test(text)) {
-    entry.classList.add('indexation-esci-scopus');
-  } else if (/\{SCOPUS\}/i.test(text)) {
-    entry.classList.add('indexation-scopus');
-  }
-});
 
 document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
   const slides = Array.from(slideshow.querySelectorAll('.slideshow-slide'));
