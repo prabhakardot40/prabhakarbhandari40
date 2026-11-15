@@ -146,6 +146,17 @@ if (impactFilter) impactFilter.addEventListener('input', filterPublications);
 if (citeScoreFilter) citeScoreFilter.addEventListener('input', filterPublications);
 filterPublications();
 
+document.querySelectorAll('#journalList .publication').forEach((entry) => {
+  const text = entry.textContent || '';
+  if (/\{SCIE\s*&\s*SCOPUS\}/i.test(text)) {
+    entry.classList.add('indexation-scie-scopus');
+  } else if (/\{ESCI\s*&\s*SCOPUS\}/i.test(text)) {
+    entry.classList.add('indexation-esci-scopus');
+  } else if (/\{SCOPUS\}/i.test(text)) {
+    entry.classList.add('indexation-scopus');
+  }
+});
+
 document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
   const slides = Array.from(slideshow.querySelectorAll('.slideshow-slide'));
   const status = slideshow.querySelector('.slideshow-status');
@@ -160,7 +171,7 @@ document.querySelectorAll('[data-slideshow]').forEach((slideshow) => {
     slides[activeSlide].hidden = true;
     activeSlide = (index + slides.length) % slides.length;
     slides[activeSlide].hidden = false;
-    status.textContent = `Photo ${activeSlide + 1} of ${slides.length}`;
+    status.textContent = `Photo/Video ${activeSlide + 1} of ${slides.length}`;
   }
 
   function stopSlideshow() {
